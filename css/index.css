@@ -35,11 +35,6 @@ nav {
     color: white;
 }
 
-.nav-sub-text {
-    font-size: x-small;
-    color: rgba(255, 255, 255, 0.526);
-}
-
 #nav-hr {
     width: 40%;
 }
@@ -53,16 +48,41 @@ nav {
 .main-container {
     height: 100vh;
     overflow-y: scroll;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
+}
+
+.small-icon {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10px;
+}
+
+.really-small-icon {
+    opacity: 0.7;
+    height: 12px;
+    width: 12px;
 }
 
 iframe {
     height: 25rem;
     width: 40rem;
+}
+
+.image-container {
+    display: flex;
+}
+
+.large-image {
+    max-height: 35vh;
+    border-radius: 10px;
+    margin-right: 3rem;
 }

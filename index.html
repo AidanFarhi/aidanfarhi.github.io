@@ -12,7 +12,6 @@
         <img id="headshot" src="images/headshot.png">
         <hr id="nav-hr">
         <p id="name">Aidan Farhi</p>
-        <!-- <p class="nav-sub-text">Data Engineer & Student</p> -->
     </nav>
     <div class="main-container">
         <h1>Hello! 👋</h1>
@@ -25,6 +24,9 @@
         <p>
             The purpose of this site is to showcase the work I completed
             as part of my computer science capstone course CS 499.
+        </p>
+        <p>
+            Self Assessment goes here.
         </p>
         <h1>The Project 🗂️</h1>
         <p>
@@ -39,12 +41,12 @@
             To accomplish this, I took a mobile application I had built in a previous
             course and migrated it to a fully-functional web application.
         </p>
-        <h2>Step One: Code Review 📝</h2>
+        <h1>Code Review of Existing Application 📝</h1>
         <p>
             As part of the initial steps of the project, I performed an in-depth code review
-            of the pre-existing mobile application.
+            of the pre-existing mobile application which I migrated to a web app.
         </p>
-        <p>Here is the video:</p>
+        <p>Here is the video of the in-depth code review:</p>
         <iframe 
             src="https://www.youtube.com/embed/SrVumEjtFP0" 
             title="YouTube video player" 
@@ -52,6 +54,115 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
+        <p>Here are the tools I used to build the original mobile app:</p>
+        <ul>
+            <li>Java<img class="small-icon" src="images/java_icon.png" alt="java icon"></li>
+            <li>Android SDK <img class="small-icon" src="images/android_sdk_icon.png" alt="java icon"></li>
+            <li>Android Studio<img class="small-icon" src="images/android_studio_icon.png" alt="java icon"></li>
+            <li>Gradle<img class="small-icon" src="images/gradle_icon.png" alt="java icon"></li>
+        </ul>
+        <p>Here are some screenshots of the original mobile application:</p>
+        <div class="image-container">
+            <img class="large-image" src="images/mobile_login.png" alt="login mobile screenshot">
+            <img class="large-image" src="images/mobile_grid.png" alt="grid mobile screenshot">
+            <img class="large-image" src="images/mobile_register.png" alt="register mobile screenshot">
+        </div>
+        <a href="https://github.com/AidanFarhi/cs360-portfolio" target="_blank">
+            <p>
+                Here is a link to the code on GitHub
+                <img class="really-small-icon" src="images/link_icon.png" alt="link icon">
+            </p>
+        </a>
+        <h1>Enhanced Version of Mobile App ✨</h1>
+        <p>
+            The enhanced version of the project runs as a web application.
+            This means it is more accessable and portable accross platforms.
+        </p>
+        <p>
+            The purpose of the application is to help users track their weight over time.
+        </p>
+        <p>
+            I call it "Weight Tracker"
+        </p>
+        <a href="https://afarhidev-weight-tracker-ed183f93bb4c.herokuapp.com/" target="_blank">
+            <p>
+                Check out the live app here
+                <img class="really-small-icon" src="images/link_icon.png" alt="link icon">
+            </p>
+        </a>
+                <a href="https://github.com/AidanFarhi/weight-tracker" target="_blank">
+            <p>
+                Here is a link to the code on GitHub
+                <img class="really-small-icon" src="images/link_icon.png" alt="link icon">
+            </p>
+        </a>
+        <p>Here are some screenshots of the web application:</p>
+        <div class="image-container">
+            <img class="large-image" src="images/login_web.png" alt="login web screenshot">
+            <img class="large-image" src="images/home_web.png" alt="grid web screenshot">
+            <img class="large-image" src="images/weight_entry_web.png" alt="register web screenshot">
+        </div>
+        <h1>Software Design and Engineering 🖥️</h1>
+        <p>The application was built using the Controller-Service-Repo pattern.</p>
+        <p>Architecturally, it is a monolith hosted on Heroku that has a separate DB instance provisioned using Neon.</p>
+        <div class="image-container">
+            <img class="large-image" src="images/wt_high_level_arch.png" alt="arch">
+        </div>
+        <p>Here is the tech stack that I used:</p>
+        <ul>
+            <li>Golang<img class="small-icon" src="images/golang_icon.png" alt="golang  icon"></li>
+            <li>PosgreSQL<img class="small-icon" src="images/postgres_icon.png" alt="pg icon"></li>
+            <li>JavaScript<img class="small-icon" src="images/js_icon.png" alt="js icon"></li>
+            <li>HTML<img class="small-icon" src="images/html_icon.png" alt="java icon"></li>
+            <li>CSS<img class="small-icon" src="images/css_icon.png" alt="css icon"></li>
+            <li>Heroku<img class="small-icon" src="images/heroku_icon.svg" alt="heroku icon"></li>
+            <li>Neon<img class="small-icon" src="images/neon_icon.png" alt="neon icon"></li>
+        </ul>
+        <h1>Algorithms and Data Structures ⚙️</h1>
+        <p>
+            On the backend, one of the core structures is the WeightEntry struct, 
+            which represents a single database row and is collected into Go slices ([]WeightEntry) 
+            that serve as the primary in-memory containers.
+            These are dynamic arrays that grow amortized O(1) on append. 
+        </p>
+        <div class="image-container">
+            <img class="large-image" src="images/wt_ds_algo.png" alt="arch">
+        </div>
+        <p>
+            The service and repository layers are thin structs holding pointers (*WeightRepo, *pgxpool.Pool) that act 
+            as dependency-injected components rather than complex data structures.
+        </p>
+        <p>
+            In the database layer, PostgreSQL handles the heavy work. 
+            The ROW_NUMBER() window function uses internal sorting (O(n log n)) 
+            over partitions to deduplicate entries by date, while B-tree indexes support efficient 
+            lookups on filters and ORDER BY clauses. On the frontend, the fetched weight
+            entries become arrays of plain JavaScript objects, which are then sorted with 
+            an O(n log n) comparison sort, mapped to labels and values in O(n), and scanned for min/max in O(n). 
+        </p>
+        <p>
+            Chart.js ultimately transforms these arrays into its own typed arrays and drawing instructions 
+            for canvas rendering. Across the whole app, the dominant structures are dynamic arrays, structs, 
+            and indexed relational tables, and the main algorithms involve sorting, window functions, 
+            and linear array transformations.
+        </p>
+        <h1>Databases 🛢️</h1>
+        <p>
+            The database has been implemented using PostgreSQL. 
+            I have created three separate tables to handle all application data: 
+        </p>
+        <ul>
+            <li>user_account - holds all user account information</li>
+            <li>user_session - holds all user session data.</li>
+            <li>weight_entry - contains all weight entry data. </li>
+        </ul>
+        <p>Here is the ERD showing the tables and relationships:</p>
+        <div class="image-container">
+            <img class="large-image" src="images/wt_db_erd.png" alt="arch">
+        </div>
+        <p>
+            The pgx library is used to facilitate interaction between the server-side layer and the PostgreSQL database.
+        </p>
     </div>
 </body>
 </html>
