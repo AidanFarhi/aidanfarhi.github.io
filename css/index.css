@@ -18,22 +18,6 @@ nav {
     align-items: center;
 }
 
-.main-container {
-    display: grid;
-    grid-template-columns: 30px 1fr 30px;
-}
-
-.main-container-card {
-    grid-column: 2/3;
-}
-
-.main-container-card-img {
-    height: 200px;
-    width: 400px;
-    border-radius: 5px;
-    opacity: .9;
-}
-
 #headshot {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -46,7 +30,7 @@ nav {
     color: white;
 }
 
-#job-title {
+.nav-sub-text {
     font-size: x-small;
     color: rgba(255, 255, 255, 0.526);
 }
