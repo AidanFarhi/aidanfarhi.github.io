@@ -335,6 +335,11 @@ title: "Aidan Farhi Portfolio"
             <img class="large-image" src="images/wt_db_erd.png" alt="arch">
         </div>
         <p>
+            Each table has a primary key that uniquely identifies its rows (id), and foreign keys are used to establish 
+            relationships between tables. Ror example, <b>weight_entry.user_account_id</b> and <b>user_session.user_account_id</b>
+            reference <b>user_account.id </b> to link entries and sessions to their respective users.
+        </p>
+        <p>
             Here are the SQL statements I used to create the tables:
         </p>
         {% highlight sql %}
