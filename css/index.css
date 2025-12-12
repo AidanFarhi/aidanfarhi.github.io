@@ -86,3 +86,7 @@ iframe {
     border-radius: 10px;
     margin-right: 3rem;
 }
+
+#final-paragraph {
+    padding-bottom: 5dvh;
+}
