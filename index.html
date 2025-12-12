@@ -19,34 +19,37 @@
             My name is Aidan Farhi. 
         </p>
         <p>
-            I'm a Data Engineer and a student at Southern New Hampshire University.
+            I'm a data engineer and student at Southern New Hampshire University.
         </p>
         <p>
-            The purpose of this site is to showcase the work I completed
-            as part of my computer science capstone course CS 499.
+            Throughout my computer science program, I have developed several skills relevant to software engineering and professional software development. 
         </p>
         <p>
-            Self Assessment goes here.
-        </p>
-        <h1>The Project 🗂️</h1>
-        <p>
-            The goal of this project is to showcase my skills accross three dimensions:
+            Here are the skills that I have gained a fundemental grasp of:
         </p>
         <ul>
             <li>Software Design and Engineering 🖥️</li>
             <li>Algorithms and Data Structures ⚙️</li>
             <li>Databases 🛢️</li>
         </ul>
-        <p>
-            To accomplish this, I took a mobile application I had built in a previous
-            course and migrated it to a fully-functional web application.
+        <p>    
+            My technical journey began with mobile application development using Java and the Android SDK.
+            These were used to build an app that helped users track their weight over time.
+            Through the capstone, I expanded those skills by transforming this single-platform mobile app into a 
+            fully deployed, cross-platform web application built with Go, HTML, CSS, JavaScript, and PostgreSQL.
         </p>
-        <h1>Code Review of Existing Application 📝</h1>
+        <p>
+            By successfully completing this capstone, and the bulk of the computer science program,
+            I have increased my depth of knowledge in the field.
+            This will assist me as I navigate my current role as a data engineer and whatever
+            future endeavors aligned with this field I end up pursuing.
+        </p>
+        <h1>Code Review of Existing Mobile Application 📝</h1>
         <p>
             As part of the initial steps of the project, I performed an in-depth code review
             of the pre-existing mobile application which I migrated to a web app.
         </p>
-        <p>Here is the video of the in-depth code review:</p>
+        <p>Here is the video of the code review:</p>
         <iframe 
             src="https://www.youtube.com/embed/SrVumEjtFP0" 
             title="YouTube video player" 
@@ -103,7 +106,19 @@
             <img class="large-image" src="images/weight_entry_web.png" alt="register web screenshot">
         </div>
         <h1>Software Design and Engineering 🖥️</h1>
-        <p>The application was built using the Controller-Service-Repo pattern.</p>
+        <p>The application was built loosely following the <b>Controller</b>-<b>Service</b>-<b>Repository</b> pattern.</p>
+        <p>
+            The <b>Controller</b> layer handles recieving and responding to requests, interacting with the Service layer.
+        </p>
+        <p>
+            The <b>Service</b> layer is where the bulk of the business logic resides, interacting with the Controller and Repository layer.
+        </p>
+        <p>
+            The <b>Repository</b> layer handles all interactions with the database. It interfaces with the Service layer.
+        </p>
+        <div class="image-container">
+            <img class="large-image" src="images/controller_service_repo.png" alt="controller service repo">
+        </div>
         <p>Architecturally, it is a monolith hosted on Heroku that has a separate DB instance provisioned using Neon.</p>
         <div class="image-container">
             <img class="large-image" src="images/wt_high_level_arch.png" alt="arch">
@@ -118,7 +133,48 @@
             <li>Heroku<img class="small-icon" src="images/heroku_icon.svg" alt="heroku icon"></li>
             <li>Neon<img class="small-icon" src="images/neon_icon.png" alt="neon icon"></li>
         </ul>
+        <p>
+            I also made sure to write unit tests for the service layer. By doing so, I validated that the
+            core business logic is functioning as expected. I achieved 95% code coverage for the service package.
+        </p>
+        <div class="image-container">
+            <img class="large-image" src="images/code_coverage.png" alt="code coverage">
+        </div>
+        <p>
+            One of the course outcomes was this:
+        </p>
+        <p>
+            <i>
+                Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential 
+                vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources
+            </i>
+        </p>
+        <p>
+            I was able to demonstrate growth in this area by ensuring that all user interactions with the application are
+            secured by session-based authorization. I also made sure that all passwords are encrypted before being stored in the database.
+        </p>
+        <p>
+            In addition, the overall application implementation demonstrates key skills outlined in this course outcome:
+        </p>
+        <p>
+            <i>
+                Demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose 
+                of implementing computer solutions that deliver value and accomplish industry-specific goals
+            </i>
+        </p>
         <h1>Algorithms and Data Structures ⚙️</h1>
+        <p>
+            While building out the application, I leveraged my skills in Algorithms and Data Structures.
+        </p>
+        <p>
+            This aligns with the following course outcome:
+        </p>
+        <p>
+            <i>
+                Design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science 
+                practices and standards appropriate to its solution, while managing the trade-offs involved in design choices
+            </i>
+        </p>
         <p>
             On the backend, one of the core structures is the WeightEntry struct, 
             which represents a single database row and is collected into Go slices ([]WeightEntry) 
