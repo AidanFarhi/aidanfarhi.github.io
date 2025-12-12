@@ -56,7 +56,7 @@ li {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.6);
     padding: 0.5rem;
 }
 
@@ -85,6 +85,10 @@ iframe {
     max-height: 35vh;
     border-radius: 10px;
     margin-right: 3rem;
+}
+
+.link-p {
+    color: rgba(0, 0, 255, 0.75);
 }
 
 #final-paragraph {
