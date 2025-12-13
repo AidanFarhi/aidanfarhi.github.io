@@ -79,12 +79,17 @@ iframe {
 
 .image-container {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.medium-image {
+    width: 15vw;
+    border-radius: 10px;
 }
 
 .large-image {
-    max-height: 35vh;
-    border-radius: 10px;
-    margin-right: 3rem;
+    width: 50vw;
 }
 
 .link-p {
